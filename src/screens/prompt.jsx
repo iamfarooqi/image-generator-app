@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   TextInput,
@@ -8,7 +8,17 @@ import {
   Image,
 } from 'react-native';
 
-const Prompt = () => {
+const Prompt = ({ onGenerate }) => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (text) => {
+    setInputValue(text);
+  };
+
+  const handleGenerate = () => {
+    onGenerate(inputValue); // Call the callback function with the input value
+  };
+
   return (
     <View style={styles.container}>
       <TextInput
@@ -16,8 +26,10 @@ const Prompt = () => {
         placeholder="Search"
         placeholderTextColor="gray"
         required
+        value={inputValue}
+        onChangeText={handleInputChange}
       />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleGenerate}>
         <Image
           source={require('../images/send.png')}
           style={{ tintColor: '#fff', width: 15, height: 15 }}
