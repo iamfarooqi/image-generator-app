@@ -36,7 +36,7 @@ const Header = ({
           />
         </TouchableOpacity>
       )}
-      <Text style={styles.title}>{title}</Text>
+      {title && <Text style={styles.title}>{title}</Text>}
       <View style={tailwind`flex flex-row items-center justify-between`}>
         {searchIcon && (
           <TouchableOpacity

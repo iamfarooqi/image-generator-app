@@ -20,9 +20,9 @@ const Home = () => {
   return (
     <View style={tailwind`flex-1`}>
       <Header
-        leftIcon={require('../../images/menu.png')}
-        rightIcon={require('../../images/cart.png')}
-        searchIcon={require('../../images/search.png')}
+        // leftIcon={require('../../images/menu.png')}
+        // rightIcon={require('../../images/cart.png')}
+        // searchIcon={require('../../images/search.png')}
         title={'Home'}
         onClickLeftIcon={() => {
           navigation.openDrawer();
